@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Hey Ho! SO!";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h1> Liste des items </h1>
+
+<table border="1" cellpadding="4">
+    <tr>
+        <th> Id</th>
+        <th> Name </th>
+    </tr>
+
+    @foreach (var row in ViewBag.ListItems)
+    {
+        <tr>
+            <td> @row.Id </td>
+            <td> @row.Name </td>
+        </tr>
+    }
+</table>
+
+<div>
+    <form action="/home/create" method="post">
+        <label for="Name">Name</label>
+        <input type="text" name="name" />
+        <input type="submit" name="submit" />
+    </form>
+</div>
