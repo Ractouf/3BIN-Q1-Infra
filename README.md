@@ -16,7 +16,7 @@ Actions sur users:\
 
 -> générer clés avec puttygen\
 -> save la clé privée\
--> copier le contenu de la clé publique /!\ PAS LE FICHIER /!\\
+-> copier le contenu de la clé publique /!\ PAS LE FICHIER /!\ \
 -> .ssh/authorized_keys
 
 (config de la commande adduser)\
@@ -37,7 +37,7 @@ ReverseProxy avec l'app en java\
 -> adduser jetty\
 -> winscp et move siteJetty dans ma home directory\
 -> unzip et mv le file vers le user jetty\
--> /!\ Jetty n'a pas les droits sur le fichier /!\\
+-> /!\ Jetty n'a pas les droits sur le fichier /!\ \
 -> chown -R jetty siteJetty et chgrp -R jetty siteJetty(-R c'est récursif)\
 -> apt-get install default-jdk\
 -> java -jar NoDBRunTest.jar &\
@@ -92,7 +92,7 @@ Scéance 7:\
 -> aller dans /tasks/main.yml (task générale)\
 -> /defaults/main.yml (variable par défaut si pas mentionnées)\
 -> en dehors du fichier crée par le role faire un .yml qui définit les vars et roles\
-/!\ en haut des 3 fichiers .yml ci-dessus il y a  ---  A NE PAS RETIRER /!\\
+/!\ en haut des 3 fichiers .yml ci-dessus il y a  ---  A NE PAS RETIRER /!\ \
 /!\ dans le /tasks/main.yml pas bêtement copier, il faut retirer en haut le taks, gather_facts et hosts /!\
 
 -> faire un .yml obscur\
