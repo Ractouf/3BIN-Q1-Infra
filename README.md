@@ -55,7 +55,7 @@ Scéance 4:\
 -> docker images\
 -> docker run -d -p 8090:80 test (-d pour rendre la main de la console, -p pour port forwarding)\
 -> docker ps -a\
--> lynx http://localhost:8090\
+-> lynx http://localhost:8090 \
 -> docker logs {id container}
 
 -> docker rm/rmi pour retirer container/images\
