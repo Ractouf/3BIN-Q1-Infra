@@ -32,3 +32,16 @@ cd /var/www
 ls
 mkdir test
 sudo su
+ls
+cd labo6/
+ls
+mkdir 1
+sudo su
+ls
+sudo su
+exit
+sudo su
+ls
+cd /home/francois/exam
+su terra
+exit

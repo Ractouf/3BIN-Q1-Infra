@@ -1,0 +1,36 @@
+---
+- name: "Question 2"
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "Install dependencies"
+      apt:
+        update_cache: true
+        name:
+          - gnupg
+          - software-properties-common
+          - wget
+          - curl
+        state: present
+    - name: "Add hashicorp GPG key"
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+
+    - name: "Add hashicorp repository"
+      apt_repository:
+        repo: deb [arch=amd64] https://apt.releases.hashicorp.com bookworm stable
+        state: present
+
+    - name: "Install terraform"
+      apt:
+        update_cache: true
+        name:
+          - terraform
+
+    - name: "Create user terra"
+      user:
+        name: terra
+        shell: /bin/bash
+        create_home: false
+        group: sudo
