@@ -41,7 +41,7 @@ ReverseProxy avec l'app en java\
 -> chown -R jetty siteJetty et chgrp -R jetty siteJetty(-R c'est récursif)\
 -> apt-get install default-jdk\
 -> java -jar NoDBRunTest.jar &\
--> test sur lynx http://localhost:8080\
+-> test sur lynx http://localhost:8080 \
 -> a2enmod proxy proxy_http\
 -> a2enmod ssl\
 -> systemctl restart apache2\
