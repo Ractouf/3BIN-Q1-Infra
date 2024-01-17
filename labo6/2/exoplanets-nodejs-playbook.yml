@@ -1,0 +1,30 @@
+- name: "Install Exoplanets"
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "Install nodejs npm"
+      apt:
+        update_cache: yes
+        name:
+          - nodejs
+          - npm
+        state: present
+    - name: "git clone public repo"
+      ansible.builtin.git:
+        repo: https://gitlab.vinci.be/olivier.choquet/exoplanets_infra.git
+        dest: /home/francois/labo6/2/exoplanets
+
+    - name: "Build app"
+      command: npm install
+      args:
+        chdir: /home/francois/labo6/2/exoplanets
+
+    - name: "Install PM2"
+      npm:
+        name: pm2
+        global: yes
+
+    - name: "Start app"
+      command: pm2 start npm -- start
+      args:
+        chdir: /home/francois/labo6/2/exoplanets
