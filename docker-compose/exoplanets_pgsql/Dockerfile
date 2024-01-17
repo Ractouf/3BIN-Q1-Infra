@@ -1,15 +1,14 @@
-FROM debian
+FROM node
 
-WORKDIR /app
-COPY ./exoplanets/package.json ./exoplanets/package-lock.json ./
+COPY exoplanets /var/www/exoplanets
+
+WORKDIR /var/www/exoplanets
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install npm -y
 
 RUN npm i
 
-COPY . .
+EXPOSE 3000
 
-EXPOSE 80
-
-CMD npm start
+CMD ["node", "app.js"]

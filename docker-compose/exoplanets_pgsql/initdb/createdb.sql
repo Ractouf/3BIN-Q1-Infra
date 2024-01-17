@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS exoplanets;
 CREATE DATABASE exoplanets;
 
 \c exoplanets;

@@ -1,28 +1,24 @@
-# docker-compose.yml 
 version: "3.9"
 services:
   app:
-    build:
-      context: .
-    depends_on:
-      postgres:
-        condition: service_healthy
-  postgres:
-    image: postgres:14-alpine
+    build: .
     ports:
-      - 5432:5432
-    volumes:
-      - ./exoplanets/initdb
+      - 3000:3000
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+  postgres_db:
+    image: postgres
     environment:
-      - POSTGRES_PASSWORD=azerty1.
-      - POSTGRES_USER=francois
-      - POSTGRES_DB=app_db
+      POSTGRES_PASSWORD: ipl
+      POSTGRES_DB: exoplanets
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 30s
       timeout: 30s
       retries: 3
 volumes:
-  postgres_data: {}
-
-
+  pgdata:

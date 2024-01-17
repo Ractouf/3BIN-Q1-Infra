@@ -11,3 +11,24 @@ unzip syllabusHTML.zip
 ls
 nano /etc/apache2/sites-available/monsite.conf
 sudo su
+ls
+cd docker
+ls
+cd 2
+ls
+nano Dockerfile 
+tree
+nano Dockerfile 
+sudo su
+ls
+su
+clear
+su
+clear
+apt-get install apache2
+su
+sudo su
+cd /var/www
+ls
+mkdir test
+sudo su
