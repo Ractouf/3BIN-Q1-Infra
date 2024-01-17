@@ -13,6 +13,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: "erman"
       MONGO_INITDB_ROOT_PASSWORD: "erman"
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express:
     image: mongo-express
@@ -22,3 +24,6 @@ services:
       ME_CONFIG_MONGODB_SERVER: "mongo"
       ME_CONFIG_MONGODB_ADMINUSERNAME: "erman"
       ME_CONFIG_MONGODB_ADMINPASSWORD: "erman"
+
+volumes:
+  mongo-data:
