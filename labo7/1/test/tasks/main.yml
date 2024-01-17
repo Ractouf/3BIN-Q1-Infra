@@ -1,0 +1,27 @@
+---
+- name: "Install nodejs npm"
+  apt:
+    update_cache: yes
+    name:
+      - nodejs
+      - npm
+    state: present
+- name: "git clone public repo"
+  ansible.builtin.git:
+    repo: "{{ repo_exoplanets  }}"
+    dest: "{{ localdir_exoplanets }}"
+
+- name: "Build app"
+  command: npm install
+  args:
+    chdir: "{{ localdir_exoplanets }}"
+
+- name: "Install PM2"
+  npm:
+    name: pm2
+    global: yes
+
+- name: "Start app"
+  command: pm2 start npm -- start
+  args:
+    chdir: "{{ localdir_exoplanets }}"

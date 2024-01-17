@@ -1,0 +1,9 @@
+---
+- name: "Install Exoplanets"
+  hosts: localhost
+  gather_facts: false
+  vars:
+    repo_exoplanets: https://gitlab.vinci.be/olivier.choquet/exoplanets_infra.git
+    localdir_exoplanets: /home/francois/labo7/exoplanets
+  roles:
+    - test
