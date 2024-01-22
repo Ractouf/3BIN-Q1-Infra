@@ -1,5 +1,3 @@
-/!\ check /etc/hosts /!\\
-
 Actions sur users:\
 -> /etc/skel template des home directory
 
@@ -25,12 +23,13 @@ Actions sur users:\
 -> DIR_MODE=0700\
 -> ADD_EXTRA_GROUPS=1
 
-Scéance 3:\
+Apache2 https:\
 Site basique en https\
 -> Changer le virtualhost\
 -> créer un certificat https\
 -> a2enmod ssl && systemctl restart apache2\
 -> bien a2ensite et reload\
+-> check /etc/hosts
 -> port forward le 443
 
 ReverseProxy avec l'app en java\
@@ -48,7 +47,7 @@ ReverseProxy avec l'app en java\
 -> Créer certificat https si pas encore fait\
 -> créer un VirtualHost pour le site avec un proxy
 
-Scéance 4:\
+Docker basics:\
 -> apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\
 -> créer un dockerfile\
 -> docker build -t test .\
@@ -62,7 +61,7 @@ Scéance 4:\
 -> docker rm $(docker ps -a -q)\
 -> docker rmi $(docker images -q)
 
-Scéance 5:\
+Docker compose basics:\
 -> apt-get install docker-compose\
 -> créer un docker classique\
 -> créer un docker-compose.yml (version, services, volumes)\
@@ -86,7 +85,7 @@ Scéance 6:\
 
 -> pm2 delete all
 
-Scéance 7:\
+Roles ansible:\
 -> ansible-galaxy init test\
 -> dans la dir que le role a crée\
 -> aller dans /tasks/main.yml (task générale)\
@@ -99,7 +98,7 @@ Scéance 7:\
 -> recup la GPG key et l'ajouter avec apt_key\
 -> ajouter la repository "deb [arch=amd64] LIEN bookworm stable" /!\ retirer le /gpg a la fin du lien /!\
 
-Scéance 8:\
+Terraform basics:\
 -> faire les lignes de 13.6.2 du syllabusHTML\
 -> faire son main.tf depuis une des images disponible en ligne\
 -> terraform init\
